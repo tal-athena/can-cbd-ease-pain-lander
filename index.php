@@ -29,8 +29,8 @@ require_once('settings.php');
     <?php include_once('includes/headaddons.php'); ?>
 
   </head>
-  <div style="width: 100%; background-color: #f4f6f8;">
-	<p style="width:100%; color: #999; text-align: center;">Advertorial</p>
+  <div style="width: 100%; background-color: #f4f6f8; text-align: center;">
+	<span style="width:100%; color: #999;">Advertorial</span>
   </div>
   <body class="payment_form checkout" >
     <header>
