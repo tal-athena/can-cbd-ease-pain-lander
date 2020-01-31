@@ -51,6 +51,15 @@ if( true ){//!empty($_POST['campaign_id']) && !empty($_POST['email']) ) {
         $shipping_lastname = $arr[1];
         $_SESSION['shipping_lastname'] = $shipping_lastname; 
 
+    } else if($num >= 3) {
+        $shipping_firstname = $arr[0];
+        $_SESSION['shipping_firstname'] = $shipping_firstname;
+        array_shift($arr);
+        foreach ($arr as $word) {
+                $shipping_lastname .= $word;
+                $shipping_lastname .= ' ';
+         } 
+         $_SESSION['shipping_lastname'] = $shipping_lastname;
     } else {
         $shipping_firstname = $arr[0];
         $_SESSION['shipping_firstname'] = $shipping_firstname;
@@ -59,7 +68,6 @@ if( true ){//!empty($_POST['campaign_id']) && !empty($_POST['email']) ) {
             $_SESSION['shipping_lastname'] = $shipping_lastname;
         }
     };
-
 
 	//Save the customer info
 	$customer_fields = array('first_name', 'last_name', 'address', 'address2', 'city', 'state', 'zip', 'country', 'phone', 'email', 'notes');
