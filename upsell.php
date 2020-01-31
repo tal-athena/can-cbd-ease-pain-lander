@@ -1,9 +1,7 @@
 <?php
 
-include_once './includes/functions.php'; // function for order info
 include_once 'settings.php';
 
-$_SESSION['shipping_address'];
 $_SESSION['shipping_address2'];
 $_SESSION['shipping_city'];
 $_SESSION['shipping_state'];
@@ -13,6 +11,7 @@ $_SESSION['shipping_zipcode'];
 $thisstep = 2;
 
 $next_number = $site->step[$thisstep]->next;
+
 if($next_number == 'thanks'){
 	$next_location = $site->thanks_page_location;
 } else {
@@ -36,16 +35,16 @@ $declineLink = $next_location.'?'.$querystring;
 	    <meta charset="utf-8">
 	    <!--[if lt IE 9]>
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <![endif]-->
-	    <title>Verified CBD - Pain Relief</title>
+	    <title>Verified CBD - Joint and Inflamation Relief </title>
 	    <meta name="description" content="">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"/>
 	    <meta name="googlebot" content="noindex"/>
 	    <meta name="Slurp" content="noindex"/>
 		<link rel="icon" type="image/png" href="images/favicon-16x16.png">
-		
-		<script src="js/jquery.min.js" type="text/javascript"></script>
 
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		
 		<link href="https://fonts.googleapis.com/css?family=Oswald:500,600,700&display=swap" rel="stylesheet">
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<style type="text/css">
@@ -175,12 +174,10 @@ $declineLink = $next_location.'?'.$querystring;
 				width: 100%;
 			}
 			.no-btn { margin-bottom: 15px; }
-
 			.decline {
 				text-align: center;
-			    margin-left: 40px;
 			    padding-top: 15px;
-			    font-size: 18px;
+			    font-size: 12px;
 			    font-weight: 500;
 			    color: #aaaaaa;
 			    letter-spacing: -0.5px;
@@ -197,7 +194,6 @@ $declineLink = $next_location.'?'.$querystring;
 				max-width: 170px;
     			padding: 30px 0 20px;
 			}
-			
 			.copyright {
 				text-align: center;
 				font-size: 14px;
@@ -246,17 +242,6 @@ $declineLink = $next_location.'?'.$querystring;
 				}			
 			}
 
-			
-			.blinking {
-				animation:blinkingText 0.9s infinite;
-			}
-			@keyframes blinkingText{
-				0%{		color: #c00a2c;	}
-				49%{	color: #c00a2c;	}
-				50%{	color: transparent;	}
-				99%{	color:#c00a2c;	}
-				100%{	color: #c00a2c;	}
-			}
 			@media(max-width: 767px) {
 				.upsell {
 					background: #fff;
@@ -279,24 +264,23 @@ $declineLink = $next_location.'?'.$querystring;
 		</header>
 		<hr>
 		<form name="is-upsell" class="is-upsell" id="upsell_form" action="/can-cbd-ease-pain/process/up.php?<?php echo $querystring; ?>" accept-charset="utf-8" enctype="application/x-www-form-urlencoded;charset=utf-8" method="post">
-			<input type="hidden" id="order_id" name="order_id" value="<?php echo $_GET['order_id']; ?>">
+			<input type="hidden" name="order_id" value="<?php echo $_GET['order_id']; ?>">
 			<input type="hidden" name="step" id="step" value="2">
 		</form>
-
 		<div class="main">
 			<p class="expire text-center pulse" style="font-size: 16px">This Offer Expires When Sold Out!</p>
 			<h1 class="text-center"><span style="color: #ff0000;">Wait!</span><br>Your order is not complete...</h1>
-			<p class="text-center subtitle">You qualify for this <b>bonus discounted</b> offer...</p>		
-			<center><img class="prod-img" src="images/upsell1.jpg"></center>
-			<p class="text-center" style="font-size: 12px; color: #666;"><b>Ingredients:</b> Hemp-Derived Cannabidiol, Rice Flour, Vegetable Cellulose, Magnesium Steartate, Silivon Dioxide.</p>
-			<p class="available text-center">ONLY <span id="counter">19</span> LEFT!</p>
+			<p class="text-center subtitle">You qualify for this <b>bonus discounted</b> offer...</p>
+			<p class="text-center"></p>
+			<center><img class="prod-img" src="images/upsell2.jpg"></center>
+			<p class="text-center" style="font-size: 12px; color: #666;"><b>Ingredients:</b> Purified Water, Emu Oil, Aloe Barbadensis Leaf Extract, Squalane, Glycerin, Stearic Acid, Cetyl Alcohol, Stearyl Alcohol, Ethylene Glycol Distearate, Menthol, Cetyl Phosphate, PCR Hemp Oil, Arnica Montana Flower Extract, Boswellia Serrata Extract, Allantoin, Phenoxyethanol, Caprylyl Glycol, Potassium Sorbate, Hexylene Glycol, Disodium EDTA, Tocopheryl Acetate (Vitamin E). </p>
+			<p class="available text-center">ONLY <span id="counter">11</span> LEFT!</p>
 			<div class="up-btn">
-				<a href="#" onclick="submitUpsell()"><center><img src="images/up1_button.png"></center></a>
+				<a href="#" onclick="submitUpsell();"><center><img src="images/upsell2button.png"></center></a>
 			</div>
 			<div class="no-btn">
 				<a href="/<?php echo $declineLink; ?>"><center><img src="images/up1no.png"></center></a>
 			</div>
-			
 		</div>
 	</div>
 	<footer>
@@ -329,9 +313,9 @@ if(isset($_GET['decline'])){
 	});
 	
 	var down = true;
-	var value = 22;
+	var value = 11;
 	var increment = 1;
-	var ceiling = 3;
+	var ceiling = 2;
 	var interval = setInterval(PerformCalc, 20000);
 	
 	function PerformCalc() {
@@ -351,7 +335,7 @@ if(isset($_GET['decline'])){
 		}
 		document.getElementById('counter').innerHTML = value;
 	}
-	
+
 </script>
 
 <!-- GTM purchase script -->

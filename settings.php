@@ -68,7 +68,7 @@ $site->step[2]->page_location = 'can-cbd-ease-pain/upsell.php';
 
 $site->step[2] = new stdClass();
 $site->step[2]->page_location = 'can-cbd-ease-pain/upsell.php'; 
-$site->step[2]->product_id = 5;
+$site->step[2]->product_id = 4;
 $site->step[2]->campaign_id = 2;
 $site->step[2]->offer_id = 2;
 $site->step[2]->shipping_id = 2;
@@ -77,7 +77,7 @@ $site->step[2]->next = 3;
 
 $site->step[3] = new stdClass();
 $site->step[3]->page_location = 'can-cbd-ease-pain/upsell2.php'; 
-$site->step[3]->product_id = 4;
+$site->step[3]->product_id = 5;
 $site->step[3]->campaign_id = 2;
 $site->step[3]->offer_id = 2;
 $site->step[3]->shipping_id = 2;
