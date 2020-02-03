@@ -48,7 +48,7 @@ h1{font:14px;}
        <div></div>
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td style="" valign="top">
+            <td valign="top">
                 <div style="padding:140px 40px 0 40px;">
                 
                   
