@@ -399,6 +399,7 @@ function validateFormCheckout() {
 </script>
 
 <!-- GTM checkout script -->
+
 <script>
 dataLayer.push({
     'event': 'checkout',
@@ -412,8 +413,12 @@ dataLayer.push({
      }
    }
   });
-<!-- End GTM view script -->
+
 </script>
+<!-- End GTM view script -->
+
+<?php include_once('includes/bodyaddons.php'); ?>
+
   </body>
 </html>
 

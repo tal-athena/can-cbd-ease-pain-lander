@@ -165,6 +165,8 @@ vertical-align: middle;">Rated Excellent</span>
         Ingredients: Hemp-Derived Cannabidiol, Rice Flour, Vegetable Cellulose, Magnesium Steartate, Silivon Dioxide.
     </div>
 
+<?php include_once('includes/bodyaddons.php'); ?>
+
 </body>
 
 <footer>
@@ -343,5 +345,3 @@ function PerformCalc() {
     document.getElementById('counter').innerHTML = value;
 }
 </script>
-
-<?php include_once('includes/bodyaddons.php'); ?>

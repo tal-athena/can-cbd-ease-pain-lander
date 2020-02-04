@@ -161,6 +161,9 @@ $declineLink = $next_location.'?'.$querystring;
         Flower Extract, Boswellia Serrata Extract, Allantoin, Phenoxyethanol, Caprylyl Glycol, Potassium Sorbate,
         Hexylene Glycol, Disodium EDTA, Tocopheryl Acetate (Vitamin E).
     </div>
+
+<?php include_once('includes/bodyaddons.php'); ?>
+    
 </body>
 <footer>
     <div class="container-fluid prefooter">
@@ -181,7 +184,7 @@ $declineLink = $next_location.'?'.$querystring;
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
     </div>
     <div class="container-fluid footer">
         <div class="container">
@@ -324,4 +327,3 @@ dataLayer.push({ // purchase event GA
 </script>
 <!-- End GTM purchase script -->
 
-<?php include_once('includes/bodyaddons.php'); ?>
